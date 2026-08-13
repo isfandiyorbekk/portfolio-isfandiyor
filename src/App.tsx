@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./companets/Navbar"; // Fayllar papkasi 'companets' ekan
-import Home from "./layouts/Home";
-import About from "./layouts/About";
-import ProjectsPage from "./layouts/Projects";
-import ContactPage from "./layouts/Contact";
-import Footer from "./companets/Footer";
+import Navbar from "./components/Navbar"; // Fayllar papkasi 'companets' ekan
+import Home from "./pages/Home";
+import About from "./pages/About";
+import ProjectsPage from "./pages/Projects";
+import ContactPage from "./pages/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
