@@ -5,6 +5,9 @@ import HomePage from "./pages/Home";
 import AboutPage from "./pages/About";
 import ProjectsPage from "./pages/Projects";
 import ContactPage from "./pages/Contact";
+import Login from "./auth/Login";
+import AdminLayout from "./layouts/AdminLayout";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +29,19 @@ export const router = createBrowserRouter([
       {
         path: "contact",
         element: <ContactPage />,
+      },
+    ],
+  },
+  {
+    path: "admin",
+    element: <Login />,
+  },
+  {
+    element: <ProtectedRoute />,
+    children: [
+      {
+        path: "/adminLayout",
+        element: <AdminLayout />,
       },
     ],
   },
