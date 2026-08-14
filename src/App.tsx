@@ -8,6 +8,8 @@ import ContactPage from "./pages/Contact";
 import Login from "./auth/Login";
 import AdminLayout from "./layouts/AdminLayout";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Projects from "./AdminPages/Projects";
+import AddProjects from "./AdminPages/AddProjects";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +44,16 @@ export const router = createBrowserRouter([
       {
         path: "/adminLayout",
         element: <AdminLayout />,
+        children: [
+          {
+            index: true,
+            element: <Projects />,
+          },
+          {
+            path: "addProject",
+            element: <AddProjects />,
+          },
+        ],
       },
     ],
   },
