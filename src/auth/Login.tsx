@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const usernameRef = useRef<HTMLInputElement>(null);
@@ -86,12 +86,12 @@ const Login = () => {
 
         {/* Footer Link */}
         <div className="mt-8 pt-6 border-t border-slate-800/80 text-center">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="text-xs text-slate-400 hover:text-purple-400 transition"
           >
             ← Bosh sahifaga qaytish
-          </a>
+          </Link>
         </div>
       </div>
     </div>
