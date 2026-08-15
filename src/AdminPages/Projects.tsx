@@ -1,6 +1,18 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ProjectsData } from "../data/Projects.Data";
+import type { ProjectTypes } from "../types/ProjectTypes";
+
 function Projects() {
+  const [projects, setProjects] = useState<ProjectTypes[]>(ProjectsData);
+  function handleDelete(id: number) {
+    setProjects((prev) => prev.filter((project) => project.id !== id));
+    const dataIndex = ProjectsData.findIndex((project) => project.id === id);
+    if (dataIndex !== -1) {
+      ProjectsData.splice(dataIndex, 1);
+    }
+  }
+
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -18,6 +30,7 @@ function Projects() {
           <span>Yangi Loyiha</span>
         </Link>
       </div>
+
       <div className="border border-slate-800 rounded-2xl bg-slate-900/40 overflow-hidden shadow-xl">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs text-slate-300">
@@ -31,8 +44,8 @@ function Projects() {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800/60">
-              {ProjectsData && ProjectsData.length > 0 ? (
-                ProjectsData.map((project, index) => (
+              {projects && projects.length > 0 ? (
+                projects.map((project, index) => (
                   <tr
                     key={project.id || index}
                     className="hover:bg-slate-800/30 transition-colors"
@@ -71,7 +84,6 @@ function Projects() {
                       </div>
                     </td>
 
-                    {/* Loyiha havolasi */}
                     <td className="p-4">
                       {project.link ? (
                         <a
@@ -97,7 +109,8 @@ function Projects() {
                         </button>
                         <button
                           type="button"
-                          className="px-2.5 py-1.5 rounded-lg border border-red-500/20 bg-red-500/10 hover:bg-red-500/20 text-red-400 text-[11px] font-medium transition"
+                          onClick={() => handleDelete(project.id)}
+                          className="px-2.5 py-1.5 rounded-lg border border-red-500/20 bg-red-500/10 hover:bg-red-500/20 text-red-400 text-[11px] font-medium transition cursor-pointer"
                         >
                           🗑️ Delete
                         </button>
@@ -119,4 +132,5 @@ function Projects() {
     </div>
   );
 }
+
 export default Projects;
