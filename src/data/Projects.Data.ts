@@ -1,4 +1,6 @@
-export const ProjectsData = [
+import type { ProjectTypes } from "../types/ProjectTypes";
+
+export const ProjectsData: ProjectTypes[] = [
   {
     id: 1,
     title: "Blogify",

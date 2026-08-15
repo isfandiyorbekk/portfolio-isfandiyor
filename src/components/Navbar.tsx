@@ -1,7 +1,6 @@
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const { pathname } = useLocation();
 
   const isAdminActive = pathname.startsWith("/admin");
