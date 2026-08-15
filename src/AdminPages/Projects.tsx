@@ -40,7 +40,7 @@ function Projects() {
                 <th className="p-4">Loyiha Nomi</th>
                 <th className="p-4">Texnologiyalar</th>
                 <th className="p-4">Havola (Link)</th>
-                <th className="p-4 text-right">Amallar</th>
+                <th className="p-4 text-right">Amal</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800/60">
@@ -101,12 +101,6 @@ function Projects() {
                     </td>
                     <td className="p-4 text-right">
                       <div className="flex items-center justify-end gap-2">
-                        <button
-                          type="button"
-                          className="px-2.5 py-1.5 rounded-lg border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-[11px] font-medium transition"
-                        >
-                          ✏️ Edit
-                        </button>
                         <button
                           type="button"
                           onClick={() => handleDelete(project.id)}
