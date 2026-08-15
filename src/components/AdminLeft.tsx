@@ -1,17 +1,13 @@
 import { NavLink, useNavigate } from "react-router-dom";
-
 const AdminLeft = () => {
   const navigate = useNavigate();
-
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/admin");
   };
-
   return (
     <aside className="w-64 border-r border-slate-800 bg-slate-900/50 flex flex-col justify-between p-4 min-h-screen shrink-0">
       <div>
-        {/* LOGO BO'LIMI */}
         <div className="pb-4 mb-6 border-b border-slate-800 flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center font-black text-white shadow-lg shadow-purple-500/20">
             A
@@ -25,10 +21,7 @@ const AdminLeft = () => {
             </span>
           </div>
         </div>
-
-        {/* MENYULAR RO'YXATI */}
         <nav className="space-y-1.5">
-          {/* 1. Barcha Loyihalar */}
           <NavLink
             to="/adminLayout"
             end
@@ -43,8 +36,6 @@ const AdminLeft = () => {
             <span className="text-sm">📋</span>
             <span>Loyihalar</span>
           </NavLink>
-
-          {/* 2. Loyiha Qo'shish */}
           <NavLink
             to="addProject"
             className={({ isActive }) =>
@@ -60,8 +51,6 @@ const AdminLeft = () => {
           </NavLink>
         </nav>
       </div>
-
-      {/* PASTKI QISM (Saytga o'tish va Chiqish) */}
       <div className="pt-4 border-t border-slate-800 space-y-2">
         <NavLink
           to="/"

@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
-
 import HomePage from "./pages/Home";
 import AboutPage from "./pages/About";
 import ProjectsPage from "./pages/Projects";
@@ -10,7 +9,6 @@ import AdminLayout from "./layouts/AdminLayout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Projects from "./AdminPages/Projects";
 import AddProjects from "./AdminPages/AddProjects";
-
 export const router = createBrowserRouter([
   {
     path: "/",

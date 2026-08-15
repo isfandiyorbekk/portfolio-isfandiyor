@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ProjectsData } from "../data/Projects.Data";
-
 function Projects() {
   return (
     <div className="space-y-6">
@@ -19,12 +18,9 @@ function Projects() {
           <span>Yangi Loyiha</span>
         </Link>
       </div>
-
-      {/* 2. LOYIHALAR JADVALI (TABLE) */}
       <div className="border border-slate-800 rounded-2xl bg-slate-900/40 overflow-hidden shadow-xl">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs text-slate-300">
-            {/* Jadval Sarlavhasi */}
             <thead className="bg-slate-900/80 border-b border-slate-800 text-slate-400 uppercase font-semibold tracking-wider">
               <tr>
                 <th className="p-4">#</th>
@@ -41,12 +37,9 @@ function Projects() {
                     key={project.id || index}
                     className="hover:bg-slate-800/30 transition-colors"
                   >
-                    {/* Tartib raqami */}
                     <td className="p-4 font-mono text-slate-500">
                       {index + 1}
                     </td>
-
-                    {/* Loyiha nomi va rasmi */}
                     <td className="p-4 font-semibold text-white">
                       <div className="flex items-center gap-3">
                         {project.image && (
@@ -59,8 +52,6 @@ function Projects() {
                         <span>{project.title}</span>
                       </div>
                     </td>
-
-                    {/* Texnologiyalar badges */}
                     <td className="p-4">
                       <div className="flex flex-wrap gap-1.5">
                         {Array.isArray(project.techs) ? (
@@ -96,19 +87,14 @@ function Projects() {
                         <span className="text-slate-600">—</span>
                       )}
                     </td>
-
-                    {/* UPDATE VA DELETE TUGMALARI */}
                     <td className="p-4 text-right">
                       <div className="flex items-center justify-end gap-2">
-                        {/* Update / Edit Button */}
                         <button
                           type="button"
                           className="px-2.5 py-1.5 rounded-lg border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-[11px] font-medium transition"
                         >
                           ✏️ Edit
                         </button>
-
-                        {/* Delete Button */}
                         <button
                           type="button"
                           className="px-2.5 py-1.5 rounded-lg border border-red-500/20 bg-red-500/10 hover:bg-red-500/20 text-red-400 text-[11px] font-medium transition"
@@ -120,7 +106,6 @@ function Projects() {
                   </tr>
                 ))
               ) : (
-                /* Ma'lumot yo'q bo'lsa */
                 <tr>
                   <td colSpan={5} className="p-8 text-center text-slate-500">
                     Hozircha hech qanday loyiha topilmadi.
@@ -134,5 +119,4 @@ function Projects() {
     </div>
   );
 }
-
 export default Projects;

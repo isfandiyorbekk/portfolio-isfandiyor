@@ -56,8 +56,6 @@ export default function ProjectsPage() {
                     ))}
                   </div>
                 </div>
-
-                {/* Netlify Havolasi (Tugma) */}
                 <div className="pt-2">
                   <a
                     href={project.link}

@@ -8,8 +8,6 @@ export default function Footer() {
           <span className="text-white font-medium">Isfandiyor</span>. Barcha
           huquqlar himoyalangan.
         </p>
-
-        {/* GitHub Havolasi */}
         <a
           href="https://github.com/isfandiyorbekmahammadjonov-a11y"
           target="_blank"

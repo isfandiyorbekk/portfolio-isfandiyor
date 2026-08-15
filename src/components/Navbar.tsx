@@ -1,11 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
-
 const Navbar = () => {
   const { pathname } = useLocation();
-
   const isAdminActive = pathname.startsWith("/admin");
-
-  // Class nomlarini qayta-qayta yozmaslik uchun yordamchi funksiya
   const getLinkClass = (path: string) => {
     const isActive = pathname === path;
     return `relative px-4 py-2 rounded-xl transition-all duration-300 ${
@@ -14,7 +10,6 @@ const Navbar = () => {
         : "text-slate-300 hover:text-white hover:bg-slate-800/50"
     }`;
   };
-
   const getMobileLinkClass = (path: string) => {
     const isActive = pathname === path;
     return `px-4 py-2.5 rounded-xl transition duration-200 ${
@@ -23,7 +18,6 @@ const Navbar = () => {
         : "text-slate-300 hover:bg-slate-800 hover:text-white"
     }`;
   };
-
   return (
     <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
@@ -37,8 +31,6 @@ const Navbar = () => {
             .dev
           </span>
         </Link>
-
-        {/* Desktop Navbar (Map-siz, har bir Link alohida) */}
         <div className="hidden md:flex items-center space-x-3">
           <nav className="flex items-center space-x-1 text-base font-medium">
             <Link to="/" className={getLinkClass("/")}>
@@ -54,8 +46,6 @@ const Navbar = () => {
               Contact
             </Link>
           </nav>
-
-          {/* Admin Panel Tugmasi */}
           <Link
             to="/admin"
             className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 border ${
@@ -73,8 +63,6 @@ const Navbar = () => {
             <span>Admin</span>
           </Link>
         </div>
-
-        {/* Mobile Navbar Menu (Map-siz) */}
         <details className="md:hidden group relative">
           <summary className="list-none p-2.5 rounded-xl text-slate-300 hover:text-white bg-slate-900 border border-slate-800 cursor-pointer focus:outline-none transition">
             <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -98,8 +86,6 @@ const Navbar = () => {
             <Link to="/contact" className={getMobileLinkClass("/contact")}>
               Contact
             </Link>
-
-            {/* Mobile Admin Link */}
             <div className="pt-2 mt-1 border-t border-slate-800">
               <Link
                 to="/admin"
@@ -124,5 +110,4 @@ const Navbar = () => {
     </header>
   );
 };
-
 export default Navbar;

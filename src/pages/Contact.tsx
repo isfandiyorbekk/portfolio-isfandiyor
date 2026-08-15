@@ -72,7 +72,6 @@ export default function ContactPage() {
       link: "#",
     },
   ];
-
   return (
     <div className="container mx-auto px-6 py-16 md:py-28 overflow-hidden">
       <section className="space-y-12 md:space-y-16 max-w-3xl mx-auto">
