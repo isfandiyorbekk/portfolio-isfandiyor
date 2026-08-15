@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import MyImg from "../../public/MyImg.png";
 const HomePage = () => {
   return (
     <div className="container mx-auto px-6 py-16 md:py-28 overflow-hidden">
@@ -44,7 +45,7 @@ const HomePage = () => {
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-3xl blur-2xl opacity-40 group-hover:opacity-80 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
             <div className="relative w-[280px] h-[340px] sm:w-[360px] sm:h-[440px] rounded-3xl overflow-hidden bg-slate-900 border-2 border-slate-700/50 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
               <img
-                src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww"
+                src={MyImg}
                 alt="Isfandiyor"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
