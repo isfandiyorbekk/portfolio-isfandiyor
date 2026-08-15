@@ -1,38 +1,8 @@
+import { ProjectsData } from "../data/Projects.Data";
 export default function ProjectsPage() {
-  const projects = [
-    {
-      id: 1,
-      title: "Blogify",
-      description:
-        "Maqolalar va blog postlarini yaratish, tahrirlash hamda ulashish uchun mo'ljallangan qulay platforma.",
-      image: "/blogify.png",
-      link: "https://blogify-isfandiyorr.netlify.app",
-      techs: ["React", "Next.js", "Tailwind"],
-    },
-    {
-      id: 2,
-      title: "Unsplash Gallery",
-      description:
-        "Rasmlarni qidirish, yuklab olish va saqlash imkonini beruvchi interaktiv galereya ilovasi.",
-      image: "/unsplash.png",
-      link: "https://unsplash-isfandiyor.netlify.app",
-      techs: ["JavaScript", "Unsplash API", "CSS"],
-    },
-    {
-      id: 3,
-      title: "Finance Tracker",
-      description:
-        "Daromad va xarajatlarni hisoblab boruvchi, kirim-chiqim statistikalarini ko'rsatuvchi moliya paneli.",
-      image: "/trackker.png",
-      link: "https://expence-trackker.netlify.app",
-      techs: ["React", "Chart.js", "Tailwind"],
-    },
-  ];
-
   return (
     <div className="container mx-auto px-6 py-16 md:py-28 overflow-hidden">
       <section className="space-y-12 md:space-y-16">
-        {/* Sarlavha */}
         <div className="space-y-3 text-center md:text-left">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white">
             Mening{" "}
@@ -45,7 +15,7 @@ export default function ProjectsPage() {
 
         {/* Loyihalar Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {ProjectsData.map((project) => (
             <div
               key={project.id}
               className="group relative bg-slate-900/80 border border-slate-800/80 rounded-3xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10 backdrop-blur-sm"

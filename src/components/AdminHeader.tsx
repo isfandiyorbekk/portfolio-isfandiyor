@@ -1,7 +1,6 @@
 const Header = () => {
   return (
     <header className="h-16 border-b border-slate-800 bg-slate-900/40 px-6 flex items-center justify-between shrink-0">
-      {/* 1. CHAP TARAF: Sahifa nomi / Status */}
       <div className="flex items-center gap-3">
         <h2 className="text-sm font-semibold text-slate-200">
           Loyihalar Boshqaruvi
@@ -10,10 +9,7 @@ const Header = () => {
           ● Live
         </span>
       </div>
-
-      {/* 2. O'NG TARAF: Foydalanuvchi profili */}
       <div className="flex items-center gap-4">
-        {/* Foydalanuvchi haqida ma'lumot */}
         <div className="flex items-center gap-2.5 pl-3 border-l border-slate-800">
           <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-500 to-indigo-500 flex items-center justify-center text-white font-bold text-xs shadow-md shadow-purple-500/20">
             IM
